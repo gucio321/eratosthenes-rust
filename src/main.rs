@@ -1,3 +1,6 @@
+use scanln::scanln;
+
 fn main() {
-    println!("Hello, world!");
+    let max_number = scanln!("Enter destiny number: ");
+    println!("{}", max_number)
 }
