@@ -12,7 +12,7 @@ fn main() {
         }
 
         // search for multiplies
-        let mut multiple = list[current_index];
+        let multiple = list[current_index];
         let mut i = current_index + 1;
         loop {
             if i >= list.len() {
