@@ -11,19 +11,20 @@ fn main() {
             break;
         }
 
-        let current = list[current_index];
-        println!("{}", current);
-        let mut multiple = current*current;
-        for i in 0..list.len() {
+        // search for multiplies
+        let mut multiple = list[current_index];
+        let mut i = current_index + 1;
+        loop {
             if i >= list.len() {
                 break;
             }
-            if list[i] == multiple {
+            
+            let current_idx = list.get(i).expect("list is empty");
+            if *current_idx != multiple && current_idx % multiple == 0 {
                 list.remove(i);
-                multiple += current;
             }
             
-            println!("Multiple {}", multiple);
+            i += 1;
         }
         
         current_index += 1;
