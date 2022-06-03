@@ -31,7 +31,7 @@ fn get_prime_numbers(max:i32) -> Vec<i32> {
             }
             
             let current_idx = list.get(i).expect("list is empty");
-            if *current_idx != multiple && current_idx % multiple == 0 {
+            if current_idx % multiple == 0 {
                 list.remove(i);
             }
         }
