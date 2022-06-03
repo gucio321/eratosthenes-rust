@@ -3,8 +3,11 @@ use scanln::scanln;
 fn main() {
     let max_number = scanln!("Enter destiny number: ");
     let max_number_int = max_number.parse::<i32>().unwrap();
-    // for some reasons, if 5, 1..max_number_int is 4 1-4 xD
-    let mut list: Vec<i32> = (2..max_number_int+1).collect();
+    println!("{:?}", get_prime_numbers(max_number_int));
+}
+
+fn get_prime_numbers(max:i32) -> Vec<i32> {
+    let mut list: Vec<i32> = (2..max+1).collect();
     let mut current_index = 0;
     let mut list_len= list.len();
     loop {
@@ -32,5 +35,5 @@ fn main() {
         current_index += 1;
     }
     
-    println!("{:?}", list);
+    return list;
 }
