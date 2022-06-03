@@ -1,9 +1,12 @@
 use scanln::scanln;
+use std::time::Instant;
 
 fn main() {
     let max_number = scanln!("Enter destiny number: ");
     let max_number_int = max_number.parse::<i32>().unwrap();
+    let time_before = Instant::now();
     println!("{:?}", get_prime_numbers(max_number_int));
+    println!("duration of operation: {:?}", time_before.elapsed());
 }
 
 fn get_prime_numbers(max:i32) -> Vec<i32> {
