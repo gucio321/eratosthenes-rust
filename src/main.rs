@@ -5,8 +5,10 @@ fn main() {
     let max_number = scanln!("Enter destiny number: ");
     let max_number_int = max_number.parse::<i32>().unwrap();
     let time_before = Instant::now();
-    println!("{:?}", get_prime_numbers(max_number_int));
-    println!("duration of operation: {:?}", time_before.elapsed());
+    let result = get_prime_numbers(max_number_int);
+    let duration = time_before.elapsed();
+    println!("{:?}", result);
+    println!("duration of operation: {:?}", duration);
 }
 
 fn get_prime_numbers(max:i32) -> Vec<i32> {
