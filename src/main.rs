@@ -41,3 +41,13 @@ fn get_prime_numbers(max:i32) -> Vec<i32> {
     
     return list;
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    
+    #[test]
+    fn test_get_prime_numbers() {
+        assert_eq!(get_prime_numbers(10), vec![2, 3, 5, 7]);
+    }
+}
