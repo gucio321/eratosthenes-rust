@@ -8,15 +8,15 @@ fn main() {
 
 fn get_prime_numbers(max:i32) -> Vec<i32> {
     let mut list: Vec<i32> = (2..max+1).collect();
+    let last_index = *list.last().expect("no last index?");
     let mut current_index = 0;
     let mut list_len= list.len();
     loop {
-        if list[current_index]*2 > *list.last().expect("error getting last index") {
-            break;
-        }
-
         // search for multiplies
         let multiple = list[current_index];
+        if multiple*2 > last_index {
+            break;
+        }
         let mut i = current_index + 1;
         loop {
             if i >= list_len {
