@@ -3,7 +3,7 @@ use std::time::Instant;
 
 fn main() {
     let max_number = scanln!("Enter destiny number: ");
-    let max_number_int = max_number.parse::<i32>().unwrap();
+    let max_number_int = max_number.parse::<i32>().expect("You haven't passed a valid intager value. Are you sure you know what this programm is used for?");
     let time_before = Instant::now();
     let result = get_prime_numbers(max_number_int);
     let duration = time_before.elapsed();
