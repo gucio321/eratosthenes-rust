@@ -11,7 +11,7 @@ fn get_prime_numbers(max:i32) -> Vec<i32> {
     let mut current_index = 0;
     let mut list_len= list.len();
     loop {
-        if current_index >= list_len {
+        if list[current_index]*2 > *list.last().expect("error getting last index") {
             break;
         }
 
