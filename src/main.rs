@@ -20,9 +20,10 @@ fn get_prime_numbers(max:i32) -> Vec<i32> {
             break;
         }
         
-        let mut i = current_index + 1;
+        let mut i = current_index;
         
         loop {
+            i += 1;
             if i >= list.len() {
                 break;
             }
@@ -31,8 +32,6 @@ fn get_prime_numbers(max:i32) -> Vec<i32> {
             if *current_idx != multiple && current_idx % multiple == 0 {
                 list.remove(i);
             }
-            
-            i += 1;
         }
         
         current_index += 1;
